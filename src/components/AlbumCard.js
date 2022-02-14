@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
 
-function AlbumCard() {
+function AlbumCard({ title, artist, year, img_url }) {
   return (
-    <div>AlbumCard</div>
-  )
+    <div className="album-card">
+      <h3>{title}</h3>
+      <img src={img_url}></img>
+      <p>{artist}</p>
+      <p>{year}</p>
+    </div>
+  );
 }
 
-export default AlbumCard
+export default AlbumCard;

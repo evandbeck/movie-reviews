@@ -1,14 +1,17 @@
-import React from 'react'
+import React from "react";
 
-function Artists({ artist }) {
+function Artists({ artist, onClickDisplayTitles }) {
+  function handleClick() {
+    onClickDisplayTitles(artist)
+  }
 
   return (
     <div>
       <li>
-        <ul>{artist}</ul>
+        <ul onClick={handleClick}>{artist}</ul>
       </li>
     </div>
-  )
+  );
 }
 
 export default Artists;

@@ -1,18 +1,27 @@
-import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import Genre from "./Artists";
+import React from "react";
+import { v4 as uuidv4 } from "uuid";
+import Artists from "./Artists";
 
-function ArtistsContainer({ artistArray }) {
+function ArtistsContainer({ artistArray, onClickDisplayTitles }) {
+  let filteredArtistList = [];
 
-  const artistList = artistArray.map(artist => <Genre key={uuidv4()} {...artist} />)
+  artistArray.map((artist) => filteredArtistList.push(artist.artist));
 
-  constfilteredArtistList = artistArray.map
+  const unqiueArray = filteredArtistList.filter(function (value, index, self) {
+    return self.indexOf(value) === index;
+  });
+
+  const artistList = unqiueArray.map((artist) => (
+    <Artists key={uuidv4()}  artist={artist} onClickDisplayTitles={onClickDisplayTitles}/>
+  ));
 
   return (
-    <div>
-      {artistList}
-    </div>
-  )
+      <div className="artists-container"> 
+
+
+        {artistList}
+      
+      </div>)
 }
 
 export default ArtistsContainer;

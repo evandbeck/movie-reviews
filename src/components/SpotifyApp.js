@@ -2,14 +2,15 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function SpotifyApp() {
-
   const [token, setToken] = useState("");
   const [searchKey, setSearchKey] = useState("");
   const [artists, setArtists] = useState([]);
   const CLIENT_ID = "3b6da0a811cb4cefb054f15475a6454d";
-  const REDIRECT_URI = "http://localhost:3000/";
+  const REDIRECT_URI = "http://localhost:3001/";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
+
+  const [albumArr, setAlbumArr] = []
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -49,6 +50,26 @@ function SpotifyApp() {
     setArtists(data.artists.items);
   };
 
+  useEffect(() => {
+    fetch(
+      "https://api.spotify.com/v1/browse/new-releases?country=US&limit=30&offset=5",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        params: {
+          q: searchKey,
+          type: "artist",
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then(setAlbumArr);
+  }, []);
+
+  console.log(albumArr);
+
+ 
 
   const renderArtists = () => {
     return artists.map((artist) => (
@@ -85,3 +106,5 @@ function SpotifyApp() {
     </div>
   );
 }
+
+export default SpotifyApp;

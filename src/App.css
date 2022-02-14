@@ -7,20 +7,46 @@
   height: 80px;
   background-color: lightblue;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
 .main {
+  margin: 25px;
   display: flex;
+  justify-content: space-between;
   border: 2px solid black;
 }
 
 .profile {
   border: 2px solid red;
   width: 50px;
+  margin-right: 50px;
 }
 
 li {
   list-style-type: none;
+}
+
+.artists-container {
+  border: 2px solid red;
+}
+
+.albumsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  border: 2px dotted purple;
+  flex-basis: 100%;
+  width: 850px;
+}
+
+.album-card {
+  display: flex;
+  flex-direction: column;
+  border: 2px dotted black;
+  height: 100px;
+  width: 25%;
+  margin: 25px;
 }
