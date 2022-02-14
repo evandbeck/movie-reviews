@@ -2,3 +2,25 @@
   margin: 0;
   padding: 0;
 }
+
+.navBar {
+  height: 80px;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  border: 2px solid black;
+}
+
+.profile {
+  border: 2px solid red;
+  width: 50px;
+}
+
+li {
+  list-style-type: none;
+}

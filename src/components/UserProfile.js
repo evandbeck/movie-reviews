@@ -2,8 +2,8 @@ import React from 'react'
 
 function UserProfile() {
   return (
-    <div>UserProfile</div>
+    <div className="profile">Profile</div>
   )
 }
 
-export default UserProfile
+export default UserProfile;
