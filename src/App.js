@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar.js";
 import ProfileContainer from "./components/ProfileContainer";
 import { Routes, Route, Link, Switch } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
+import HomeContainer from "./components/HomeContainer";
 
 function App() {
   const [comments, setComments] = useState([])
@@ -20,6 +21,9 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/">
+          <HomeContainer />
+        </Route>
+        <Route exact path="/review">
           <MainContainer />
         </Route>
         <Route exact path="/profile">

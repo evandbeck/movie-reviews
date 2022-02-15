@@ -50,3 +50,13 @@ li {
   width: 25%;
   margin: 25px;
 }
+
+.img-home {
+  border-radius: 15px;
+  margin: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.img-home:hover {
+  transform: scale(1.1);
+}

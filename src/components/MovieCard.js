@@ -4,7 +4,7 @@ function MovieCard({ title, year, runtime, genres, director, actors, plot, poste
   return (
     <div className="movie-card">
       <h3>{title}</h3>
-      <img src={posterUrl}></img>
+      <img src={posterUrl} alt=""></img>
       <p>{director}</p>
       <p>{year}</p>
     </div>

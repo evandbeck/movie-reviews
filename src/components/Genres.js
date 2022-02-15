@@ -1,8 +1,9 @@
 import React from "react";
 
-function Genres({ genre, onClickDisplayMovies }) {
+function Genres({ genre, onClickDisplayMovies, handleSearchDisplay }) {
   function handleClick() {
     onClickDisplayMovies(genre)
+    handleSearchDisplay()
   }
 
   return (

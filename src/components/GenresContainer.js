@@ -2,7 +2,11 @@ import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import Genres from "./Genres";
 
-function GenresContainer({ genresArray, onClickDisplayMovies }) {
+function GenresContainer({
+  genresArray,
+  onClickDisplayMovies,
+  handleSearchDisplay,
+}) {
   // let filteredArtistList = [];
 
   // artistArray.map((artist) => filteredArtistList.push(artist.artist));
@@ -12,14 +16,15 @@ function GenresContainer({ genresArray, onClickDisplayMovies }) {
   // });
 
   const genreList = genresArray.map((genre) => (
-    <Genres key={uuidv4()}  genre={genre} onClickDisplayMovies={onClickDisplayMovies}/>
+    <Genres
+      key={uuidv4()}
+      genre={genre}
+      handleSearchDisplay={handleSearchDisplay}
+      onClickDisplayMovies={onClickDisplayMovies}
+    />
   ));
 
-
-  return (
-      <div className="genres-container"> 
-        {genreList}
-      </div>)
+  return <div className="genres-container">{genreList}</div>;
 }
 
 export default GenresContainer;

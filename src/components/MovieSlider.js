@@ -5,6 +5,7 @@ import InfiniteCarousel from "react-leaf-carousel";
 
 function MovieSlider({ moviesArray }) {
   const moviePosters = moviesArray.map((movie) => {
+
     return <MoviePoster key={uuidv4()} posterUrl={movie.posterUrl} />;
   });
 

@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 import MovieCard from "./MovieCard.js"
 import { v4 as uuidv4 } from "uuid";
 
-function MoviesContainer({ filteredMovies, onChangeSearch }) {
+function MoviesContainer({ filteredMovies, onChangeSearch, searchDisplay }) {
   const [searchTerm, setSearchTerm] = useState("")
+  
 
   const displayMovieCards= filteredMovies.map(movie => {
     return (
@@ -16,12 +17,17 @@ function MoviesContainer({ filteredMovies, onChangeSearch }) {
     onChangeSearch(searchTerm)
   }
 
+  const searchForm = (<form>
+                       <label>Search: </label>
+                       <input type="text" value={searchTerm} onChange={handleSearch}></input>
+                      </form>
+                     )
+
+
+
   return (
     <div className="movieContainer">
-      <form>
-        <label>Search: </label>
-        <input type="text" value={searchTerm} onChange={handleSearch}></input>
-      </form>
+      {searchDisplay ? searchForm : null }
       {displayMovieCards}
     </div>
   )
