@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import NavBar from "./components/NavBar.js";
 import MoviesContainer from "./components/MoviesContainer.js";
 import GenresContainer from "./components/GenresContainer.js";
+import MovieSlider from "./components/MovieSlider.js"
 
 function App() {
   const [genresArray, setGenresArray] = useState([]);
@@ -25,17 +26,14 @@ function App() {
     setGenre(specificGenre);
   }
 
-  // const movieTest = moviesArray.genres.map(movie => movie.genres.filter(movieGenre => movieGenre === genre))
-  // console.log(movieTest)
-
-  const filteredMovies = moviesArray.filter(movie => movie.genres.map(movieGenre => movieGenre === genre));
-  console.log(filteredMovies);
+  const filteredMovies = moviesArray.filter(movie => movie.genres.includes(genre));
 
   return (
     <div className="App">
       <NavBar />
+      <MovieSlider moviesArray={moviesArray} />
       <main className="main">
-        <MoviesContainer />
+        <MoviesContainer filteredMovies={filteredMovies} />
         <GenresContainer
           genresArray={genresArray}
           onClickDisplayMovies={onClickDisplayMovies}

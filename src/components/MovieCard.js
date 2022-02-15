@@ -1,11 +1,11 @@
 import React from "react";
 
-function MovieCard({ title, artist, year, img_url }) {
+function MovieCard({ title, year, runtime, genres, director, actors, plot, posterUrl }) {
   return (
     <div className="movie-card">
       <h3>{title}</h3>
-      <img src={img_url}></img>
-      <p>{artist}</p>
+      <img src={posterUrl}></img>
+      <p>{director}</p>
       <p>{year}</p>
     </div>
   );
