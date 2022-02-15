@@ -12,11 +12,17 @@ function HomeContainer() {
 
   const displayTitles = moviesArray.map((movie) => {
     return (
-      <img className="img-home" src={movie.posterUrl} alt="" key={uuidv4()} />
+      <img
+        className="img-home"
+        src={movie.posterUrl}
+        alt=""
+        key={uuidv4()}
+        onError={(event) => (event.target.style.display = "none")}
+      />
     );
   });
 
-  return <div>{displayTitles}</div>;
+  return <div className="home-container">{displayTitles}</div>;
 }
 
 export default HomeContainer;

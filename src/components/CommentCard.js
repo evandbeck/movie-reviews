@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function CommentCard({ comment }) {
   return (
-    <div>
-        <p>{comment}</p>
+    <div className="comment-card">
+      <p>{comment}</p>
     </div>
-  )
+  );
 }
 
-export default CommentCard
+export default CommentCard;

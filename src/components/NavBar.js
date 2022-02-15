@@ -4,9 +4,15 @@ import { Routes, Route, Link } from "react-router-dom";
 function NavBar() {
   return (
     <div className="navBar">
-      <Link to="/">Home</Link>
-      <Link to="/review">Review</Link>
-      <Link to="/profile">Profile</Link>
+      <Link to="/" style={{textDecoration:"none"}}>
+        <li className="navbar-elements" >Home</li>
+      </Link>
+      <Link to="/review" style={{textDecoration:"none"}}>
+        <li className="navbar-elements">Review</li>
+      </Link>
+      <Link to="/profile" style={{textDecoration:"none"}}>
+        <li className="navbar-elements">Profile</li>
+      </Link>
     </div>
   );
 }

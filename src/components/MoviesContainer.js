@@ -34,7 +34,7 @@ function MoviesContainer({ filteredMovies, onChangeSearch, searchDisplay, search
     .then(setCommentsArray)
   }, [])
 
-  const searchForm = (<form>
+  const searchForm = (<form className='search-form'>
                        <label>Search: </label>
                        <input type="text" value={searchTerm} onChange={handleSearch}></input>
                       </form>
@@ -43,7 +43,7 @@ function MoviesContainer({ filteredMovies, onChangeSearch, searchDisplay, search
   
 
   return (
-    <div className="movieContainer">
+    <div className="movie-container">
       {searchDisplay ? searchForm : null }
       {movieReviewForm ? <MovieReview commentsArray={commentsArray} movieId={movieId} handleUpdateComments={handleUpdateComments} /> : null}
       {displayMovieCards}

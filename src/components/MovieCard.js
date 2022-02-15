@@ -5,7 +5,7 @@ function MovieCard({ id, title, year, runtime, genres, director, actors, plot, p
   return (
     <div className="movie-card" onClick={() => handleInfoDisplay(id)}>
       <h3>{title}</h3>
-      <img src={posterUrl} alt=""></img>
+      <img src={posterUrl} alt="" className="review-img"></img>
       <p>{director}</p>
       <p>{year}</p>
     </div>

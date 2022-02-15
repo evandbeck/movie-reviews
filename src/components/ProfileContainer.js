@@ -1,14 +1,17 @@
-import React, {useState} from 'react'
-import CommentCard from "./CommentCard.js"
+import React, { useState } from "react";
+import CommentCard from "./CommentCard.js";
 import { v4 as uuidv4 } from "uuid";
 
 function ProfileContainer({ comments }) {
-  const [userName, setUserName] = useState("")
 
-  const commentList = comments.map(comment => <CommentCard key={uuidv4()} {...comment} />)
+  const [userName, setUserName] = useState("");
 
-  function handleUserInput (e) {
-    setUserName(e.target.value)
+  const commentList = comments.map((comment) => (
+    <CommentCard key={uuidv4()} {...comment} />
+  ));
+
+  function handleUserInput(e) {
+    setUserName(e.target.value);
   }
 
   return (
@@ -21,7 +24,7 @@ function ProfileContainer({ comments }) {
       <p>{userName}</p>
       {commentList}
     </div>
-  )
+  );
 }
 
-export default ProfileContainer
+export default ProfileContainer;

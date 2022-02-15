@@ -3,17 +3,17 @@
     {
       "id": 1,
       "comment": "Hello",
-      "commentId": 1
+      "commentId": 4
     },
     {
       "id": 2,
       "comment": "This movie rocks.",
-      "commentId": 1
+      "commentId": 4
     },
     {
       "id": 3,
       "comment": "Bad movie.",
-      "commentId": 1
+      "commentId": 4
     },
     {
       "comment": "Cool!",
@@ -24,6 +24,16 @@
       "comment": "Cool",
       "commentId": 4,
       "id": 5
+    },
+    {
+      "comment": "Great movie wow!",
+      "commentId": 6,
+      "id": 6
+    },
+    {
+      "comment": "Best movie ever!",
+      "commentId": 10,
+      "id": 7
     }
   ],
   "genres": [
