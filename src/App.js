@@ -1,34 +1,44 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import NavBar from "./components/NavBar.js";
-import AlbumsContainer from "./components/AlbumsContainer.js";
-import ArtistsContainer from "./components/ArtistsContainer.js";
-import SpotifyApp from "./components/SpotifyApp";
+import MoviesContainer from "./components/MoviesContainer.js";
+import GenresContainer from "./components/GenresContainer.js";
 
 function App() {
-  const [artistArray, setArtistArray] = useState([]);
-  const [title, setTitle] = useState("");
+  const [genresArray, setGenresArray] = useState([]);
+  const [genre, setGenre] = useState("");
+  const [moviesArray, setMoviesArray] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/songs")
+    fetch("http://localhost:3000/genres")
       .then((resp) => resp.json())
-      .then(setArtistArray);
+      .then(setGenresArray);
   }, []);
 
-  const displayTitle = artistArray.filter((artist) => artist.artist === title);
+  useEffect(() => {
+    fetch("http://localhost:3000/movies")
+      .then((resp) => resp.json())
+      .then(setMoviesArray);
+  }, []);
 
-  function onClickDisplayTitles(clickedArtist) {
-    setTitle(clickedArtist);
+  function onClickDisplayMovies(specificGenre) {
+    setGenre(specificGenre);
   }
+
+  // const movieTest = moviesArray.genres.map(movie => movie.genres.filter(movieGenre => movieGenre === genre))
+  // console.log(movieTest)
+
+  const filteredMovies = moviesArray.filter(movie => movie.genres.map(movieGenre => movieGenre === genre));
+  console.log(filteredMovies);
 
   return (
     <div className="App">
       <NavBar />
       <main className="main">
-        <AlbumsContainer displayTitle={displayTitle} />
-        <ArtistsContainer
-          artistArray={artistArray}
-          onClickDisplayTitles={onClickDisplayTitles}
+        <MoviesContainer />
+        <GenresContainer
+          genresArray={genresArray}
+          onClickDisplayMovies={onClickDisplayMovies}
         />
       </main>
     </div>
