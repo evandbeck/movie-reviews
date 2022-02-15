@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import MoviesContainer from "./components/MoviesContainer.js";
-import GenresContainer from "./components/GenresContainer.js";
-import MovieSlider from "./components/MovieSlider.js";
+import MoviesContainer from "./MoviesContainer.js";
+import GenresContainer from "./GenresContainer.js";
+import MovieSlider from "./MovieSlider.js";
 
 function MainContainer() {
   const [genresArray, setGenresArray] = useState([]);
@@ -27,11 +27,18 @@ function MainContainer() {
   const filteredMovies = moviesArray.filter((movie) =>
     movie.genres.includes(genre)
   );
+
+  function onChangeSearch (searchTerm) {
+    console.log(searchTerm)
+  }
+
+  // const searchMovies = filteredMovies.filter(movie => movie.title === searchTerm)
+
   return (
     <main className="main">
       <MovieSlider moviesArray={moviesArray} />
       {/* <main className="main"> */}
-      <MoviesContainer filteredMovies={filteredMovies} />
+      <MoviesContainer filteredMovies={filteredMovies} onChangeSearch={onChangeSearch} />
       <GenresContainer
         genresArray={genresArray}
         onClickDisplayMovies={onClickDisplayMovies}

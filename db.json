@@ -1,4 +1,21 @@
 {
+  "comments": [
+    {
+      "id": 1,
+      "comment": "Hello",
+      "commentId": 1
+    },
+    {
+      "id": 2,
+      "comment": "This movie rocks.",
+      "commentId": 1
+    },
+    {
+      "id": 3,
+      "comment": "Bad movie.",
+      "commentId": 1
+    }
+  ],
   "genres": [
     "Comedy",
     "Fantasy",
