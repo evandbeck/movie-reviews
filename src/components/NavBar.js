@@ -1,12 +1,13 @@
-import React from 'react';
-import UserProfile from "./UserProfile.js";
+import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
 
 function NavBar() {
   return (
     <div className="navBar">
-      <UserProfile />
+      <Link to="/">Home</Link>
+      <Link to="/profile">Profile</Link>
     </div>
-  )
+  );
 }
 
 export default NavBar;
