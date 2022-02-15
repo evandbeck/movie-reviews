@@ -8,6 +8,8 @@ function MainContainer() {
   const [genre, setGenre] = useState("");
   const [moviesArray, setMoviesArray] = useState([]);
   const [searchDisplay, setSearchDisplay] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchMovies, setSearchMovies] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3000/genres")
@@ -32,7 +34,7 @@ function MainContainer() {
 
 
   function onChangeSearch(searchTerm) {
-    setGenre(searchTerm);
+    setSearchMovies(searchTerm);
   }
 
   // const searchMovies = filteredMovies.filter(movie => movie.title === searchTerm)
@@ -49,6 +51,8 @@ function MainContainer() {
         filteredMovies={filteredMovies}
         onChangeSearch={onChangeSearch}
         searchDisplay={searchDisplay}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
       />
       <GenresContainer
         genresArray={genresArray}

@@ -1,8 +1,9 @@
 import React from "react";
 
-function MovieCard({ title, year, runtime, genres, director, actors, plot, posterUrl }) {
+function MovieCard({ id, title, year, runtime, genres, director, actors, plot, posterUrl, handleInfoDisplay }) {
+
   return (
-    <div className="movie-card">
+    <div className="movie-card" onClick={() => handleInfoDisplay(id)}>
       <h3>{title}</h3>
       <img src={posterUrl} alt=""></img>
       <p>{director}</p>
