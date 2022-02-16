@@ -190,12 +190,59 @@ li {
 .profile-information {
   width: 25%;
   border: 2px solid blue;
+  padding: 25px;
+}
+
+.profile-details {
+  margin: 10px;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+.content-container {
+  border: 2px solid purple;
+  width: 75%;
+}
+
+.favorites-container {
+  border: 2px solid red;
+  padding: 40px;
+  width: 75%;
+  height: 200px;
+}
+
+.comments-container {
+  border: 2px solid green;
 }
 
 /* COMMENTS */
 
 .comment-card {
-  border: 2px solid red;
+  display: flex;
+  background-color: rgb(211,211,211);
+  border: 2px solid rgb(169,169,169);
+  border-radius: 15px;
+  filter: drop-shadow(2px 2px 1px black);
   margin: 10px;
   padding: 10px;
+  width: 60%;
+}
+
+.comment-username {
+  padding: 2px;
+}
+
+.comment-content {
+  font-style: italic;
+  padding: 2px;
+}
+
+.comment-delete {
+  margin-left: auto; 
+  margin-right: 0;
 }

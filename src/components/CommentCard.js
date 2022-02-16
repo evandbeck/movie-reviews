@@ -7,9 +7,14 @@ function CommentCard({ id, comment, handleDeleteComment }) {
 
   return (
     <div className="comment-card">
-      <p>USERNAME</p>
-      <p>{comment}</p>
-      <p onClick={handleDelete}>DELETE</p>
+      <div>
+        <h4 className="comment-username">USERNAME</h4>
+        <p className="comment-content">{comment}</p>
+        <p className="comment-movie">Movie</p>
+      </div>
+      <div className="comment-delete">
+        <p onClick={handleDelete}>DELETE</p>
+      </div>
     </div>
   );
 }
