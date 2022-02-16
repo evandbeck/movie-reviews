@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 function HomeCard({ posterUrl, plot, title }) {
   const [showMore, setShowMore] = useState(false);
-  const [plotDisplay, setPlotDisplay] = useState(false);
+  const [plotDisplay, setPlotDisplay] = useState(true);
 
   function displayShowMore() {
     setShowMore(true);
@@ -41,10 +41,15 @@ function HomeCard({ posterUrl, plot, title }) {
     </div>
   );
 
-  return (
-    <div className="image">
+    function handleImageError(event){
+      event.target.style.display = "none"
+      setPlotDisplay(false)
+    }
+
+    const imgOverlay = (
+      <div className="image">
       <img
-        onError={(event) => (event.target.style.display = "none")}
+        onError={handleImageError}
         className="image__img"
         src={posterUrl}
         alt=""
@@ -54,6 +59,12 @@ function HomeCard({ posterUrl, plot, title }) {
         <p className="image__description">Hello</p>
       </div>
     </div>
+    )
+
+  return (
+   <div>
+     {plotDisplay ? imgOverlay : null}
+   </div>
   );
 }
 
