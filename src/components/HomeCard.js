@@ -31,16 +31,28 @@ function HomeCard({ posterUrl, plot, title }) {
   );
 
   const moviePlot = (
-    <div onClick={handlePlot} onMouseLeave={hideShowMore} className="home-plot">
+    <div
+      onClick={handlePlot}
+      onMouseLeave={hideShowMore}
+      className="img-home-overlay"
+    >
       <h4>{title}</h4>
       <p> {plot}</p>
     </div>
   );
 
   return (
-    <div className="home-movies-container">
-      {plotDisplay ? moviePlot : movieImage}
-      {showMore ? <p className="hover-show">Show More</p> : null}
+    <div className="image">
+      <img
+        onError={(event) => (event.target.style.display = "none")}
+        className="image__img"
+        src={posterUrl}
+        alt=""
+      />
+      <div className="image__overlay image__overlay--blur">
+        <div className="image__title">Title</div>
+        <p className="image__description">Hello</p>
+      </div>
     </div>
   );
 }
