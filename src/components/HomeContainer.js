@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
+import HomeCard from "./HomeCard";
 
 function HomeContainer() {
   const [moviesArray, setMoviesArray] = useState([]);
@@ -11,15 +12,7 @@ function HomeContainer() {
   }, []);
 
   const displayTitles = moviesArray.map((movie) => {
-    return (
-      <img
-        className="img-home"
-        src={movie.posterUrl}
-        alt=""
-        key={uuidv4()}
-        onError={(event) => (event.target.style.display = "none")}
-      />
-    );
+    return <HomeCard key={uuidv4()} {...movie} />;
   });
 
   return <div className="home-container">{displayTitles}</div>;

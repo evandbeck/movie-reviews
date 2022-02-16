@@ -1,11 +1,11 @@
 import React from "react";
 
 function CommentCard({ id, comment, handleDeleteComment }) {
-
-  function handleDelete () {
-    handleDeleteComment(id)
+  console.log(id);
+  function handleDelete() {
+    handleDeleteComment(id);
   }
-  
+
   return (
     <div className="comment-card">
       <p>USERNAME</p>

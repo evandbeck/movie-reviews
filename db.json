@@ -1,33 +1,28 @@
 {
   "comments": [
     {
-      "id": 100,
-      "comment": "Hello",
-      "commentId": 2
-    },
-    {
       "id": 2,
       "comment": "This movie rocks.",
-      "commentId": 3
+      "movieId": 3
     },
     {
       "id": 3,
       "comment": "Bad movie.",
-      "commentId": 4
+      "movieId": 4
     },
     {
       "comment": "Cool",
-      "commentId": 6,
+      "movieId": 6,
       "id": 5
     },
     {
       "comment": "Great movie wow!",
-      "commentId": 7,
+      "movieId": 7,
       "id": 6
     },
     {
       "comment": "Great movie.",
-      "commentId": 4,
+      "movieId": 4,
       "id": 101
     }
   ],

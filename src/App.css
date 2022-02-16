@@ -4,11 +4,14 @@
 }
 
 .navBar {
+  position: sticky;
+  top: 0;
   height: 80px;
   background-color: lightblue;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-bottom: 25px;
 }
 
 .navbar-elements {
@@ -17,13 +20,33 @@
 
 .img-home {
   border-radius: 15px;
-  margin: 15px;
+  margin: 25px;
   transition: all 0.3s ease-in-out;
   width: 180px;
+  border: 2px solid red;
 }
 
 .img-home:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
+}
+
+.img-home:active {
+  transform: scale(0.8);
+}
+
+.home-plot {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin-top: 25px;
+  width: 230px;
+  height: 280px;
+  border: 2px solid blue;
+}
+
+.hover-show {
+  margin-top: 10px;
 }
 
 .home-container {
@@ -31,6 +54,12 @@
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
+}
+
+.home-movies-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main {
@@ -65,7 +94,7 @@
   align-items: center;
   text-align: center;
   margin: 15px;
-  background-color: rgba(211,211,211,.1);
+  background-color: rgba(211, 211, 211, 0.1);
   border-radius: 25px;
   border: 2px solid purple;
   width: 300px;
@@ -78,6 +107,10 @@
 
 li {
   list-style-type: none;
+}
+
+.genre-element {
+  margin: 15px;
 }
 
 .artists-container {
@@ -107,12 +140,12 @@ li {
 
 .profile-container {
   display: flex;
-  border: 2px solid black
+  border: 2px solid black;
 }
 
 .profile-information {
   width: 25%;
-  border: 2px solid blue
+  border: 2px solid blue;
 }
 
 /* COMMENTS */
