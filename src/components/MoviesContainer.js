@@ -3,8 +3,7 @@ import MovieCard from "./MovieCard.js";
 import { v4 as uuidv4 } from "uuid";
 import MovieReview from "./MovieReview.js";
 import MovieSlider from "./MovieSlider.js";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+import { Carousel } from "3d-react-carousal";
 
 function MoviesContainer({
   filteredMovies,
@@ -24,16 +23,6 @@ function MoviesContainer({
   //     <MovieCard key={uuidv4()} {...movie} handleInfoDisplay={handleInfoDisplay} />
   //   )
   // })
-
-  const displaySlider = filteredMovies.map((movie) => {
-    return (
-      <MovieSlider
-        key={uuidv4()}
-        {...movie}
-        handleInfoDisplay={handleInfoDisplay}
-      />
-    );
-  });
 
   function handleSearch(e) {
     setSearchTerm(e.target.value);
@@ -57,13 +46,20 @@ function MoviesContainer({
     </form>
   );
 
+  let slides = [  ];
+
+
+  const imgurlArr = filteredMovies.forEach((movies) => {
+    slides.push(<img className="carousel-img" src={movies.posterUrl} alt="" />)
+  });
+
+  
   return (
     <div className="movie-container">
       {searchDisplay ? searchForm : null}
       <div className="carousel">
-        <Carousel handleInfoDisplay={handleInfoDisplay}>
-          {displaySlider}
-        </Carousel>
+        <Carousel slides={slides} />
+        {/* <MovieSlider filteredMovies={filteredMovies} /> */}
       </div>
 
       {movieReviewForm ? (
