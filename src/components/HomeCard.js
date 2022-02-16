@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-function HomeCard({ posterUrl, plot, title }) {
+function HomeCard({ posterUrl, plot, title, year, genres }) {
   const [showMore, setShowMore] = useState(false);
   const [plotDisplay, setPlotDisplay] = useState(true);
 
@@ -41,13 +41,15 @@ function HomeCard({ posterUrl, plot, title }) {
     </div>
   );
 
-    function handleImageError(event){
-      event.target.style.display = "none"
-      setPlotDisplay(false)
-    }
+  function handleImageError(event) {
+    event.target.style.display = "none";
+    setPlotDisplay(false);
+  }
 
-    const imgOverlay = (
-      <div className="image">
+  const genreString = genres.join(" ");
+
+  const imgOverlay = (
+    <div className="image">
       <img
         onError={handleImageError}
         className="image__img"
@@ -55,17 +57,14 @@ function HomeCard({ posterUrl, plot, title }) {
         alt=""
       />
       <div className="image__overlay image__overlay--blur">
-        <div className="image__title">Title</div>
-        <p className="image__description">Hello</p>
+        <h4 className="image__title">{title}</h4>
+        <p className="image__description">{year}</p>
+        <p className="image__description">{genreString}</p>
       </div>
     </div>
-    )
-
-  return (
-   <div>
-     {plotDisplay ? imgOverlay : null}
-   </div>
   );
+
+  return <div>{plotDisplay ? imgOverlay : null}</div>;
 }
 
 export default HomeCard;

@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import CommentCard from "./CommentCard";
 
-function MovieReview({ handleUpdateComments, movieId, comments, handleDeleteComment }) {
+function MovieReview({
+  handleUpdateComments,
+  movieId,
+  comments,
+  handleDeleteComment,
+}) {
   const [reviewFormInput, setReviewFormInput] = useState("");
 
   function handleSubmitReview(e) {
     e.preventDefault();
     // Update State
-    const newComment = { comment: reviewFormInput, commentId: movieId };
+    const newComment = { comment: reviewFormInput, movieId: movieId };
     handleUpdateComments(newComment);
     // Update Database
     fetch("http://localhost:3000/comments", {
@@ -25,7 +30,13 @@ function MovieReview({ handleUpdateComments, movieId, comments, handleDeleteComm
   );
 
   const displayComments = filteredComments.map((comment) => {
-    return <CommentCard key={uuidv4()} {...comment} handleDeleteComment={handleDeleteComment} />;
+    return (
+      <CommentCard
+        key={uuidv4()}
+        {...comment}
+        handleDeleteComment={handleDeleteComment}
+      />
+    );
   });
 
   return (

@@ -29,6 +29,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <div className="body-container" > 
       <Switch>
         <Route exact path="/">
           <HomeContainer />
@@ -43,6 +44,7 @@ function App() {
           />
         </Route>
       </Switch>
+      </div>
     </div>
   );
 }

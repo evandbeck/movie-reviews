@@ -3,7 +3,7 @@ import MoviesContainer from "./MoviesContainer.js";
 import GenresContainer from "./GenresContainer.js";
 import MovieSlider from "./MovieSlider.js";
 
-function MainContainer({ comments, setComments, handleDeleteComment}) {
+function MainContainer({ comments, setComments, handleDeleteComment }) {
   const [genresArray, setGenresArray] = useState([]);
   const [genre, setGenre] = useState("");
   const [moviesArray, setMoviesArray] = useState([]);
@@ -27,11 +27,9 @@ function MainContainer({ comments, setComments, handleDeleteComment}) {
     setGenre(specificGenre);
   }
 
-
   const filteredMovies = moviesArray.filter((movie) =>
     movie.genres.includes(genre)
   );
-
 
   function onChangeSearch(searchTerm) {
     setSearchMovies(searchTerm);
@@ -45,8 +43,12 @@ function MainContainer({ comments, setComments, handleDeleteComment}) {
 
   return (
     <main className="main">
-      <MovieSlider moviesArray={moviesArray} />
       {/* <main className="main"> */}
+      <GenresContainer
+        genresArray={genresArray}
+        onClickDisplayMovies={onClickDisplayMovies}
+        handleSearchDisplay={handleSearchDisplay}
+      />
       <MoviesContainer
         filteredMovies={filteredMovies}
         onChangeSearch={onChangeSearch}
@@ -56,11 +58,6 @@ function MainContainer({ comments, setComments, handleDeleteComment}) {
         comments={comments}
         setComments={setComments}
         handleDeleteComment={handleDeleteComment}
-      />
-      <GenresContainer
-        genresArray={genresArray}
-        onClickDisplayMovies={onClickDisplayMovies}
-        handleSearchDisplay={handleSearchDisplay}
       />
     </main>
   );
