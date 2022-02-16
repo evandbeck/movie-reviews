@@ -61,7 +61,7 @@
 }
 
 .image__overlay--blur {
-  backdrop-filter: blur(5px)
+  backdrop-filter: blur(5px);
 }
 
 .img-home {
@@ -106,12 +106,12 @@
   align-content: center;
 }
 
-.main {
+/* .main {
   margin: 25px;
   display: flex;
   justify-content: space-between;
   border: 2px solid black;
-}
+} */
 
 .movie-container {
   display: flex;
@@ -199,3 +199,25 @@ li {
   margin: 10px;
   padding: 10px;
 }
+
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  display: inline-block;
+  overflow: hidden;
+}
+
