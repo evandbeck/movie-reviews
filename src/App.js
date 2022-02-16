@@ -18,13 +18,12 @@ function App() {
 
   function handleDeleteComment(id) {
     //Update State
-
+    const filteredComments = comments.filter(comment => comment.id !== id)
+    setComments(filteredComments)
     //Update DB
     fetch(`http://localhost:3000/comments/${id}`, {
       method: "DELETE",
     })
-      .then((resp) => resp.json())
-      .then((data) => console.log(data));
   }
 
   return (
@@ -35,7 +34,7 @@ function App() {
           <HomeContainer />
         </Route>
         <Route exact path="/review">
-          <MainContainer comments={comments} setComments={setComments} />
+          <MainContainer comments={comments} setComments={setComments} handleDeleteComment={handleDeleteComment} />
         </Route>
         <Route exact path="/profile">
           <ProfileContainer

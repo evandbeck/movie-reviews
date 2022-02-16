@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 function Genres({ genre, onClickDisplayMovies, handleSearchDisplay }) {
   function handleClick() {
@@ -9,7 +9,8 @@ function Genres({ genre, onClickDisplayMovies, handleSearchDisplay }) {
 
   return (
     <div>
-      <motion.ul
+      <ul className="genre-element" onClick={handleClick}>{genre}</ul>
+      {/* <motion.ul
         whileHover={{
           scale: 1.25,
           originX: 0,
@@ -20,7 +21,7 @@ function Genres({ genre, onClickDisplayMovies, handleSearchDisplay }) {
         onClick={handleClick}
       >
         {genre}
-      </motion.ul>
+      </motion.ul> */}
     </div>
   );
 }

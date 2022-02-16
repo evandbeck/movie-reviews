@@ -1,7 +1,6 @@
 import React from "react";
 
 function CommentCard({ id, comment, handleDeleteComment }) {
-  console.log(id);
   function handleDelete() {
     handleDeleteComment(id);
   }

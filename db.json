@@ -6,11 +6,6 @@
       "movieId": 3
     },
     {
-      "id": 3,
-      "comment": "Bad movie.",
-      "movieId": 4
-    },
-    {
       "comment": "Cool",
       "movieId": 6,
       "id": 5

@@ -3,7 +3,7 @@ import MovieCard from "./MovieCard.js"
 import { v4 as uuidv4 } from "uuid";
 import MovieReview from "./MovieReview.js"
 
-function MoviesContainer({ filteredMovies, onChangeSearch, searchDisplay, searchTerm, setSearchTerm, comments, setComments }) {
+function MoviesContainer({ filteredMovies, onChangeSearch, searchDisplay, searchTerm, setSearchTerm, comments, setComments, handleDeleteComment }) {
   const [movieReviewForm, setMovieReviewForm] = useState(false)
   const [movieId, setMovieId] = useState("")
 
@@ -37,7 +37,7 @@ function MoviesContainer({ filteredMovies, onChangeSearch, searchDisplay, search
   return (
     <div className="movie-container">
       {searchDisplay ? searchForm : null }
-      {movieReviewForm ? <MovieReview comments={comments} movieId={movieId} handleUpdateComments={handleUpdateComments} /> : null}
+      {movieReviewForm ? <MovieReview comments={comments} movieId={movieId} handleUpdateComments={handleUpdateComments} handleDeleteComment={handleDeleteComment} /> : null}
       {displayMovieCards}
     </div>
   )

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import CommentCard from "./CommentCard";
 
-function MovieReview({ handleUpdateComments, movieId, comments }) {
+function MovieReview({ handleUpdateComments, movieId, comments, handleDeleteComment }) {
   const [reviewFormInput, setReviewFormInput] = useState("");
 
   function handleSubmitReview(e) {
@@ -21,11 +21,11 @@ function MovieReview({ handleUpdateComments, movieId, comments }) {
   }
 
   const filteredComments = comments.filter(
-    (comment) => comment.commentId === movieId
+    (comment) => comment.movieId === movieId
   );
 
   const displayComments = filteredComments.map((comment) => {
-    return <CommentCard key={uuidv4()} {...comment} />;
+    return <CommentCard key={uuidv4()} {...comment} handleDeleteComment={handleDeleteComment} />;
   });
 
   return (
