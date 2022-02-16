@@ -3,9 +3,8 @@ import MovieCard from "./MovieCard.js"
 import { v4 as uuidv4 } from "uuid";
 import MovieReview from "./MovieReview.js"
 
-function MoviesContainer({ filteredMovies, onChangeSearch, searchDisplay, searchTerm, setSearchTerm }) {
+function MoviesContainer({ filteredMovies, onChangeSearch, searchDisplay, searchTerm, setSearchTerm, comments, setComments }) {
   const [movieReviewForm, setMovieReviewForm] = useState(false)
-  const [commentsArray, setCommentsArray] = useState([])
   const [movieId, setMovieId] = useState("")
 
   const displayMovieCards= filteredMovies.map(movie => {
@@ -25,14 +24,8 @@ function MoviesContainer({ filteredMovies, onChangeSearch, searchDisplay, search
   }
 
   function handleUpdateComments (newComment) {
-    setCommentsArray(commentsArray => [...commentsArray, newComment])
+    setComments(comments => [...comments, newComment])
   }
-
-  useEffect(() => {
-    fetch("http://localhost:3000/comments")
-    .then(resp => resp.json())
-    .then(setCommentsArray)
-  }, [])
 
   const searchForm = (<form className='search-form'>
                        <label>Search: </label>
@@ -41,11 +34,10 @@ function MoviesContainer({ filteredMovies, onChangeSearch, searchDisplay, search
                      )
 
   
-
   return (
     <div className="movie-container">
       {searchDisplay ? searchForm : null }
-      {movieReviewForm ? <MovieReview commentsArray={commentsArray} movieId={movieId} handleUpdateComments={handleUpdateComments} /> : null}
+      {movieReviewForm ? <MovieReview comments={comments} movieId={movieId} handleUpdateComments={handleUpdateComments} /> : null}
       {displayMovieCards}
     </div>
   )

@@ -16,6 +16,17 @@ function App() {
     .then(setComments)
   }, [])
 
+  function handleDeleteComment (id) {
+    //Update State
+
+    //Update DB
+    fetch(`http://localhost:3000/comments/${id}`, {
+      method: 'DELETE',
+    })
+    .then(resp => resp.json())
+    .then(data => console.log(data))
+  }
+
   return (
     <div className="App">
       <NavBar />
@@ -24,10 +35,10 @@ function App() {
           <HomeContainer />
         </Route>
         <Route exact path="/review">
-          <MainContainer />
+          <MainContainer comments={comments} setComments={setComments}/>
         </Route>
         <Route exact path="/profile">
-          <ProfileContainer comments={comments} />
+          <ProfileContainer comments={comments} handleDeleteComment={handleDeleteComment} />
         </Route>
       </Switch>
     </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import CommentCard from "./CommentCard";
 
-function MovieReview({ handleUpdateComments, movieId, commentsArray }) {
+function MovieReview({ handleUpdateComments, movieId, comments }) {
   const [reviewFormInput, setReviewFormInput] = useState("");
 
   function handleSubmitReview(e) {
@@ -20,7 +20,7 @@ function MovieReview({ handleUpdateComments, movieId, commentsArray }) {
     });
   }
 
-  const filteredComments = commentsArray.filter(
+  const filteredComments = comments.filter(
     (comment) => comment.commentId === movieId
   );
 

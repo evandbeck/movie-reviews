@@ -3,7 +3,7 @@ import MoviesContainer from "./MoviesContainer.js";
 import GenresContainer from "./GenresContainer.js";
 import MovieSlider from "./MovieSlider.js";
 
-function MainContainer() {
+function MainContainer({ comments, setComments }) {
   const [genresArray, setGenresArray] = useState([]);
   const [genre, setGenre] = useState("");
   const [moviesArray, setMoviesArray] = useState([]);
@@ -53,6 +53,8 @@ function MainContainer() {
         searchDisplay={searchDisplay}
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
+        comments={comments}
+        setComments={setComments}
       />
       <GenresContainer
         genresArray={genresArray}
