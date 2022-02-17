@@ -77,6 +77,21 @@
       "comment": "great",
       "movieId": 1,
       "id": 114
+    },
+    {
+      "comment": "nice!",
+      "movieId": 6,
+      "id": 115
+    },
+    {
+      "comment": "great movie! ",
+      "movieId": 1,
+      "id": 116
+    },
+    {
+      "comment": "sweet sauce!",
+      "movieId": 1,
+      "id": 117
     }
   ],
   "genres": [

@@ -53,23 +53,27 @@ function MovieReview({
 
   return (
     <div className="comment-container">
-      <p>Leave a comment!</p>
-      <form onSubmit={handleSubmitReview}>
-        <lable>Title:</lable>
+      <h3 className="comment-element">Leave a comment!</h3>
+      <form onSubmit={handleSubmitReview} className="comment-form">
+        <lable className="comment-element">Title:</lable>
         <input
+          className="search comment-element"
           type="text"
           value={reviewTitleInput}
           onChange={(e) => setReviewTitleInput(e.target.value)}
         ></input>
-        <lable>Review:</lable>
-        <input
+        <lable className="comment-element">Review:</lable>
+        <textarea
+          className="review-input comment-element"
           type="text"
+          rows="6"
+          cols="50"
           value={reviewFormInput}
           onChange={(e) => setReviewFormInput(e.target.value)}
-        ></input>
-        <button>Submit!</button>
+        ></textarea>
+        <button className="comment-btn">Submit!</button>
       </form>
-      <p>{reviewFormInput}</p>
+      {/* <p>{reviewFormInput}</p> */}
     </div>
   );
 }

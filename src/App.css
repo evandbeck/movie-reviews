@@ -59,12 +59,34 @@
   width: 100%;
   padding: 5px 23px 5px 30px;
   outline: 0;
-  text-align: center;
   margin-bottom: 15px;
   transition-duration: 0.35s;
 }
 
 .search:focus {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+  transform: scale(1.15);
+  transition-duration: 0.35s;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.review-input {
+  background-color: #363942;
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px 23px 5px 30px;
+  outline: 0;
+  margin-bottom: 15px;
+  transition-duration: 0.35s;
+}
+
+.review-input:focus {
   outline: none;
   border-color: #9ecaed;
   box-shadow: 0 0 10px #9ecaed;
@@ -169,14 +191,56 @@
 }
 
 .main {
-  margin: 50px;
+  margin: 25px;
+  padding: 80px;
   display: flex;
   border: 2px solid blue;
-  width: 100%;
+  /* width: 100%; */
+}
+
+.movie-header {
+  font-size: 3.5rem;
+  padding-bottom: 25px;
+}
+
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  padding: 25px 75px 0px 0px;
+  border: 5px dotted purple;
+}
+
+.comment-element {
+  margin: 20px;
+}
+
+.comment-btn {
+  display: inline-block;
+  padding: 0.46em 1.6em;
+  border: 0.1em solid #000000;
+  margin: 25px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 300;
+  color: #000000;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  background-color: #ffffff;
+  text-align: center;
+  transition: all 0.15s;
+  background-color: #ffd717;
+}
+.comment-btn:hover {
+  text-shadow: 0 0 2em rgba(255, 255, 255, 1);
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
 .movie-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -219,6 +283,7 @@
   background-color: blue;
   min-width: 750px;
   max-width: 850px;
+  max-height: 850px;
   display: flex;
   justify-content: center;
   border-radius: 25px;
@@ -357,20 +422,40 @@ li {
 }
 
 .comments-container {
+  display: flex;
+  flex-wrap: wrap;
   border: 2px solid green;
 }
 
 /* COMMENTS */
 
+.comment-tophalf {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.profile-comment {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-icons {
+  display: flex;
+  justify-content: space-around;
+}
+
 .comment-card {
   display: flex;
+  flex-direction: column;
   background-color: #5f85db;
+  background-color: rgba(53, 57, 65, 0.35);
   border-radius: 15px;
   filter: drop-shadow(2px 2px 1px black);
-  margin: 15px;
+  margin: 30px 15px;
   padding: 10px;
   width: 60%;
   min-width: 250px;
+  max-width: 400px;
 }
 
 .comment-username {

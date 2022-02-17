@@ -38,7 +38,7 @@ function HomeContainer() {
           value={search}
           onChange={handleSearch}
           placeholder="search movie by title"
-          className="search"
+          className="search text-center"
         ></input>
       </motion.form>
       <motion.div

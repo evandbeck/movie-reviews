@@ -97,6 +97,7 @@ function MoviesContainer({
 
   return (
     <div className="movie-container">
+      <h2 className="movie-header">Movie Review Selection</h2>
       <div className="carousel">
         {isGenreClicked ? (
           <Carousel slides={slidesFilter} />
