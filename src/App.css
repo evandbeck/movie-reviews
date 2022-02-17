@@ -44,6 +44,33 @@
 .navbar-elements:active {
   color: lightgray;
 }
+
+.home-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.search {
+  background-color: #363942;
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 20px;
+  width: 100%;
+  padding: 5px 23px 5px 30px;
+  outline: 0;
+  text-align: center;
+  margin-bottom: 15px;
+  transition-duration: 0.35s;
+}
+
+.search:focus {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+  transform: scale(1.15);
+  transition-duration: 0.35s;
+}
 /* ==== MOVIE HOME HOVER OVERLAY ===== */
 
 .image {
@@ -134,7 +161,7 @@
   margin-top: 10px;
 }
 
-.home-container {
+.home-movie-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

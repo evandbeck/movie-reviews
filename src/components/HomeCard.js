@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
+
 function HomeCard({ posterUrl, plot, title, year, genres }) {
   const [showMore, setShowMore] = useState(false);
   const [plotDisplay, setPlotDisplay] = useState(true);
@@ -49,7 +50,12 @@ function HomeCard({ posterUrl, plot, title, year, genres }) {
   const genreString = genres.join(" ");
 
   const imgOverlay = (
-    <div className="image">
+    <div
+      className="image"
+      initial={{ y: -60 }}
+      animate={{ y: -15 }}
+      transition={{ type: "spring", stiffness: 250 }}
+    >
       <img
         onError={handleImageError}
         className="image__img"
