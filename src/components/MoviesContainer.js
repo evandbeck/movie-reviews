@@ -14,6 +14,8 @@ function MoviesContainer({
   comments,
   setComments,
   handleDeleteComment,
+  isGenreClicked,
+  moviesArray,
 }) {
   const [movieReviewForm, setMovieReviewForm] = useState(false);
   const [movieId, setMovieId] = useState("");
@@ -46,19 +48,30 @@ function MoviesContainer({
     </form>
   );
 
-  let slides = [  ];
+  let slidesFilter = [];
+  filteredMovies.forEach((movies) => {
+    slidesFilter.push(
+      <img className="carousel-img" src={movies.posterUrl} alt="" />
+    );
+  });
+  console.log(moviesArray);
 
-
-  const imgurlArr = filteredMovies.forEach((movies) => {
-    slides.push(<img className="carousel-img" src={movies.posterUrl} alt="" />)
+  let slidesAll = [];
+  moviesArray.forEach((movies) => {
+    slidesAll.push(
+      <img className="carousel-img" src={movies.posterUrl} alt="" />
+    );
   });
 
-  
   return (
     <div className="movie-container">
       {searchDisplay ? searchForm : null}
       <div className="carousel">
-        <Carousel slides={slides} />
+        {isGenreClicked ? (
+          <Carousel slides={slidesFilter} />
+        ) : (
+          <Carousel slides={slidesAll} />
+        )}
         {/* <MovieSlider filteredMovies={filteredMovies} /> */}
       </div>
 

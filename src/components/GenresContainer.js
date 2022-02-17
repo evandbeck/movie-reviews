@@ -6,6 +6,7 @@ function GenresContainer({
   genresArray,
   onClickDisplayMovies,
   handleSearchDisplay,
+  
 }) {
   // let filteredArtistList = [];
 
