@@ -39,15 +39,15 @@ function MoviesContainer({
   filteredMovies.forEach((movies) => {
     slidesFilter.push(
       <div className="carousel-display-container">
-      <div className="carousel-details-container">
-        <div className="carousel-img-container">
-        <img className="carousel-img" src={movies.posterUrl} alt="" />
+        <div className="carousel-details-container">
+          <div className="carousel-img-container">
+          <img className="carousel-img" src={movies.posterUrl} alt="" />
+          </div>
+          <div className="carousel-info">
+            <h4>{movies.title} </h4>
+            <p>{movies.plot}</p>
+          </div>
         </div>
-        <div className="carousel-info">
-          <h4>{movies.title} </h4>
-          <p>{movies.plot}</p>
-        </div>
-      </div>
       <div className="carousel-comment">
         {comments.filter((comment) => comment.movieId === movies.id).map((comment) => {
             return (

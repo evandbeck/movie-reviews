@@ -21,6 +21,7 @@ function MovieReview({
     // Update State
     const newComment = {
       comment: reviewFormInput,
+      movieTitle: filteredMovieObj[0]["title"],
       movieId: filteredMovieObj[0]["id"],
     };
     handleUpdateComments(newComment);

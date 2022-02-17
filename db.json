@@ -1,97 +1,22 @@
 {
   "comments": [
     {
-      "id": 2,
       "comment": "This movie rocks.",
-      "movieId": 3
-    },
-    {
-      "comment": "Cool",
-      "movieId": 6,
-      "id": 5
-    },
-    {
-      "comment": "Great movie wow!",
-      "movieId": 7,
-      "id": 6
-    },
-    {
-      "comment": "Great movie.",
-      "movieId": 4,
-      "id": 101
-    },
-    {
-      "comment": "wow!",
+      "movieTitle": "Beetlejuice",
       "movieId": 1,
-      "id": 102
+      "id": 1
     },
     {
-      "comment": "Great!",
+      "comment": "Sucks!",
+      "movieTitle": "Beetlejuice",
       "movieId": 1,
-      "id": 103
+      "id": 2
     },
     {
-      "comment": "",
-      "movieId": "",
-      "id": 104
-    },
-    {
-      "comment": "Nic",
-      "movieId": "",
-      "id": 105
-    },
-    {
-      "comment": "kshdbfkhsd",
-      "movieId": "",
-      "id": 106
-    },
-    {
-      "comment": "haha",
-      "id": 107
-    },
-    {
-      "comment": "",
-      "id": 108
-    },
-    {
-      "comment": "wowza!",
-      "id": 109
-    },
-    {
-      "comment": "wow!",
-      "id": 110
-    },
-    {
-      "comment": "asdf",
-      "id": 111
-    },
-    {
-      "comment": "asdf",
-      "id": 112
-    },
-    {
-      "comment": "asdfasdf",
-      "id": 113
-    },
-    {
-      "comment": "great",
-      "movieId": 1,
-      "id": 114
-    },
-    {
-      "comment": "nice!",
-      "movieId": 6,
-      "id": 115
-    },
-    {
-      "comment": "great movie! ",
-      "movieId": 1,
-      "id": 116
-    },
-    {
-      "comment": "sweet sauce!",
-      "movieId": 1,
-      "id": 117
+      "comment": "Wow! So good!",
+      "movieTitle": "Planet 51",
+      "movieId": 14,
+      "id": 3
     }
   ],
   "genres": [

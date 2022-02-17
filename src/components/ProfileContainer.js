@@ -34,10 +34,7 @@ function ProfileContainer({ comments, handleDeleteComment }) {
             imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
             mollis pretium. Integer tincidunt. Cras dapibus.
           </p>
-        </div>
-      </div>
-      <div className="content-container">
-        <div className="favorites-container">
+          <div className="favorites-container">
           <h4>My Top Five</h4>
           <li>
             <ul>Shrek</ul>
@@ -47,9 +44,11 @@ function ProfileContainer({ comments, handleDeleteComment }) {
             <ul>Looper</ul>
           </li>
         </div>
-
+        </div>
+      </div>
+      <div className="content-container">
         <div className="comments-container">
-          
+          <h1 className="movie-header">Your Comments</h1>
           {commentList}
           </div>
       </div>

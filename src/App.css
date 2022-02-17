@@ -15,7 +15,7 @@
   #FFD717 */
 
 .body-container {
-  padding: 75px 50px;
+  padding: 25px 50px;
   background-color: #353941;
   background-image: url("./components/pattern.jpg");
 }
@@ -191,10 +191,8 @@
 }
 
 .main {
-  margin: 25px;
-  padding: 80px;
+  margin: 10px;
   display: flex;
-  border: 2px solid blue;
   /* width: 100%; */
 }
 
@@ -209,7 +207,6 @@
   align-items: center;
   width: 20%;
   padding: 25px 75px 0px 0px;
-  border: 5px dotted purple;
 }
 
 .comment-element {
@@ -241,10 +238,8 @@
 .movie-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
-  border: 2px solid yellow;
 }
 
 .carousel {
@@ -259,6 +254,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-width: 300px;
+  max-width: 800px;
 }
 
 .carousel-img {
@@ -275,12 +272,11 @@
   margin-top: 25px;
   min-width: 350px;
   max-width: 350px;
-  background-color: black;
 }
 
 .carousel-display-container {
   padding: 50px;
-  background-color: blue;
+  background-color: #26282b;
   min-width: 750px;
   max-width: 850px;
   max-height: 850px;
@@ -290,7 +286,7 @@
 }
 
 .carousel-comment {
-  margin-left: 100px;
+  margin-left: 25px;
 }
 
 .carousel-container {
@@ -308,7 +304,6 @@
 }
 
 .profile {
-  border: 2px solid red;
   width: 50px;
   margin-right: 50px;
 }
@@ -322,18 +317,12 @@
   margin: 15px;
   background-color: rgba(211, 211, 211, 0.1);
   border-radius: 25px;
-  border: 2px solid purple;
   width: 300px;
   min-height: 350px;
 }
 
 .search-form {
-  border: 2px solid blue;
   max-height: 30px;
-}
-
-.genres-container {
-  border: 2px solid green;
 }
 
 li {
@@ -347,23 +336,19 @@ li {
 .genre-element {
   font-weight: 800;
   font-size: 1.25rem;
-  color: #5f85db;
+  color: #ffd717;
   padding: 0 35px;
 }
 
 .genre-element:hover {
-  color: #90b8f8;
+  color: white;
   transform: scale(1.25);
   transition-duration: 0.35s;
 }
 
 .genre-element:active {
-  color: lightgray;
+  color: darkgrey;
   transform: scale(0.9);
-}
-
-.artists-container {
-  border: 2px solid red;
 }
 
 .albumsContainer {
@@ -371,7 +356,6 @@ li {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
-  border: 2px dotted purple;
   flex-basis: 100%;
   width: 850px;
 }
@@ -379,7 +363,6 @@ li {
 .album-card {
   display: flex;
   flex-direction: column;
-  border: 2px dotted black;
   height: 100px;
   width: 25%;
   margin: 25px;
@@ -389,12 +372,10 @@ li {
 
 .profile-container {
   display: flex;
-  border: 2px solid black;
 }
 
 .profile-information {
   width: 25%;
-  border: 2px solid blue;
   padding: 25px;
 }
 
@@ -410,12 +391,10 @@ li {
 }
 
 .content-container {
-  border: 2px solid purple;
   width: 75%;
 }
 
 .favorites-container {
-  border: 2px solid red;
   padding: 40px;
   width: 75%;
   height: 200px;
@@ -423,8 +402,8 @@ li {
 
 .comments-container {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  border: 2px solid green;
 }
 
 /* COMMENTS */
@@ -470,6 +449,16 @@ li {
 .comment-delete {
   margin-left: auto;
   margin-right: 0;
+}
+
+.emoji:hover {
+  transform: scale(1.15);
+  transition-duration: 0.35s;
+}
+
+.emoji:active {
+  transform: scale(0.85);
+  transition-duration: 0.35s;
 }
 
 .swiper {

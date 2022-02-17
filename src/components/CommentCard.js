@@ -1,6 +1,6 @@
 import React from "react";
 
-function CommentCard({ id, comment, handleDeleteComment, title }) {
+function CommentCard({ id, comment, movieTitle, handleDeleteComment }) {
   function handleDelete() {
     handleDeleteComment(id);
   }
@@ -15,19 +15,19 @@ function CommentCard({ id, comment, handleDeleteComment, title }) {
           <div className="comment-tophalf">
             <div>
               <h5 className="comment-username">Evan Beck</h5>
-              <p className="comment-movie">{title}</p>
               <br></br>
+              <p className="comment-movie">{movieTitle}</p>
               <p className="comment-content">{comment}</p>
             </div>
             <div className="comment-delete">
-              <p>🚮</p>
+              <p className="emoji" onClick={() => handleDelete()}>🚮</p>
             </div>
           </div>
           <div className="comment-icons">
-            <ul> ❤️</ul>
-            <ul>📫</ul>
-            <ul>💭</ul>
-            <ul>👯‍♀️</ul>
+            <ul className="emoji">❤️</ul>
+            <ul className="emoji">📫</ul>
+            <ul className="emoji">💭</ul>
+            <ul className="emoji">👯‍♀️</ul>
           </div>
         </div>
       </div>
