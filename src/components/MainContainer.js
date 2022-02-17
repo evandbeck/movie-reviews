@@ -11,7 +11,7 @@ function MainContainer({ comments, setComments, handleDeleteComment }) {
 
   const [isGenreClicked, setIsGenreClicked] = useState(false);
 
-  const [movieReviewForm, setMovieReviewForm] = useState(false);
+  // const [movieReviewForm, setMovieReviewForm] = useState(true);
   const [movieId, setMovieId] = useState("");
 
   useEffect(() => {
@@ -40,9 +40,7 @@ function MainContainer({ comments, setComments, handleDeleteComment }) {
   }
 
   function handleInfoDisplay(id) {
-    console.log("hello");
     setMovieId(id);
-    setMovieReviewForm(true);
   }
 
   function handleUpdateComments(newComment) {
@@ -67,15 +65,19 @@ function MainContainer({ comments, setComments, handleDeleteComment }) {
         isGenreClicked={isGenreClicked}
         moviesArray={moviesArray}
         handleInfoDisplay={handleInfoDisplay}
+        // Review Form Integration
+        comments={comments}
+        movieId={movieId}
+        handleUpdateComments={handleUpdateComments}
+        handleDeleteComment={handleDeleteComment}
       />
-      {movieReviewForm ? (
-        <MovieReview
+      <MovieReview
+          moviesArray={moviesArray}
           comments={comments}
           movieId={movieId}
           handleUpdateComments={handleUpdateComments}
           handleDeleteComment={handleDeleteComment}
-        />
-      ) : null}
+      />
     </main>
   );
 }

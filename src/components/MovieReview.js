@@ -4,16 +4,20 @@ import CommentCard from "./CommentCard";
 
 function MovieReview({
   handleUpdateComments,
+  moviesArray,
   movieId,
   comments,
   handleDeleteComment,
 }) {
+  const [reviewTitleInput, setReviewTitleInput] = useState("");
   const [reviewFormInput, setReviewFormInput] = useState("");
 
   function handleSubmitReview(e) {
     e.preventDefault();
+    const filteredMovieObj = moviesArray.filter(movie => movie.title.toLowerCase() === reviewTitleInput.toLowerCase())
+    console.log(filteredMovieObj.id)
     // Update State
-    const newComment = { comment: reviewFormInput, movieId: movieId };
+    const newComment = { comment: reviewFormInput, movieId: filteredMovieObj.id };
     handleUpdateComments(newComment);
     // Update Database
     fetch("http://localhost:3000/comments", {
@@ -39,10 +43,20 @@ function MovieReview({
     );
   });
 
+  // const filteredMovieObj = moviesArray.filter(movie => movie.title.toLowerCase() === reviewTitleInput.toLowerCase())
+  // console.log(filteredMovieObj)
+
   return (
     <div className="comment-container">
       <p>Leave a comment!</p>
       <form onSubmit={handleSubmitReview}>
+      <lable>Title:</lable>
+      <input
+          type="text"
+          value={reviewTitleInput}
+          onChange={(e) => setReviewTitleInput(e.target.value)}
+        ></input>
+        <lable>Review:</lable>
         <input
           type="text"
           value={reviewFormInput}
@@ -51,7 +65,6 @@ function MovieReview({
         <button>Submit!</button>
       </form>
       <p>{reviewFormInput}</p>
-      {displayComments}
     </div>
   );
 }
