@@ -17,7 +17,9 @@
 .body-container {
   padding: 25px 50px;
   background-color: #353941;
-  background-image: url("./components/pattern.jpg");
+  background-image: url("./components/pattern.jpg") ;
+  background-repeat: repeat;
+  min-height: calc(100vh - 40px);
 }
 
 .navBar {

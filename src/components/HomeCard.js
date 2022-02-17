@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-
+import { motion } from "framer-motion";
 
 function HomeCard({ posterUrl, plot, title, year, genres }) {
   const [showMore, setShowMore] = useState(false);
@@ -50,11 +50,13 @@ function HomeCard({ posterUrl, plot, title, year, genres }) {
   const genreString = genres.join(" ");
 
   const imgOverlay = (
-    <div
+    <motion.div
       className="image"
-      initial={{ y: -60 }}
-      animate={{ y: -15 }}
-      transition={{ type: "spring", stiffness: 250 }}
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: -10, opacity: 1 }}
+      exit={{ opacity: 0 }}
+      Layout
+      transition={{ type: "spring", stiffness: 200 }}
     >
       <img
         onError={handleImageError}
@@ -67,7 +69,7 @@ function HomeCard({ posterUrl, plot, title, year, genres }) {
         <p className="image__description">{year}</p>
         <p className="image__description">{genreString}</p>
       </div>
-    </div>
+    </motion.div>
   );
 
   return <div>{plotDisplay ? imgOverlay : null}</div>;
