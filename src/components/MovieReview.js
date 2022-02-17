@@ -14,10 +14,15 @@ function MovieReview({
 
   function handleSubmitReview(e) {
     e.preventDefault();
-    const filteredMovieObj = moviesArray.filter(movie => movie.title.toLowerCase() === reviewTitleInput.toLowerCase())
-    console.log(filteredMovieObj.id)
+    const filteredMovieObj = moviesArray.filter(
+      (movie) => movie.title.toLowerCase() === reviewTitleInput.toLowerCase()
+    );
+
     // Update State
-    const newComment = { comment: reviewFormInput, movieId: filteredMovieObj.id };
+    const newComment = {
+      comment: reviewFormInput,
+      movieId: filteredMovieObj[0]["id"],
+    };
     handleUpdateComments(newComment);
     // Update Database
     fetch("http://localhost:3000/comments", {
@@ -50,8 +55,8 @@ function MovieReview({
     <div className="comment-container">
       <p>Leave a comment!</p>
       <form onSubmit={handleSubmitReview}>
-      <lable>Title:</lable>
-      <input
+        <lable>Title:</lable>
+        <input
           type="text"
           value={reviewTitleInput}
           onChange={(e) => setReviewTitleInput(e.target.value)}
