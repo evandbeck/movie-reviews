@@ -32,7 +32,6 @@ function MoviesContainer({
   }
 
   function handleInfoDisplay(id) {
-    console.log("hello");
     setMovieId(id);
     setMovieReviewForm(true);
   }
@@ -51,7 +50,12 @@ function MoviesContainer({
   let slidesFilter = [];
   filteredMovies.forEach((movies) => {
     slidesFilter.push(
-      <img className="carousel-img" src={movies.posterUrl} alt="" />
+      <img
+        className="carousel-img"
+        src={movies.posterUrl}
+        alt=""
+        onClick={handleInfoDisplay}
+      />
     );
   });
   console.log(moviesArray);
@@ -59,7 +63,12 @@ function MoviesContainer({
   let slidesAll = [];
   moviesArray.forEach((movies) => {
     slidesAll.push(
-      <img className="carousel-img" src={movies.posterUrl} alt="" />
+      <img
+        className="carousel-img"
+        src={movies.posterUrl}
+        alt=""
+        onClick={handleInfoDisplay}
+      />
     );
   });
 

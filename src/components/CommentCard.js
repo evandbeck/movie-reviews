@@ -1,7 +1,6 @@
 import React from "react";
 
 function CommentCard({ id, comment, handleDeleteComment, title }) {
-
   function handleDelete() {
     handleDeleteComment(id);
   }
@@ -9,9 +8,10 @@ function CommentCard({ id, comment, handleDeleteComment, title }) {
   return (
     <div className="comment-card">
       <div>
-        <h4 className="comment-username">USERNAME</h4>
-        <p className="comment-content">{comment}</p>
+        <h5 className="comment-username">Evan Beck</h5>
         <p className="comment-movie">{title}</p>
+        <br></br>
+        <p className="comment-content">{comment}</p>
       </div>
       <div className="comment-delete">
         <img src="./trash.png" onClick={handleDelete} />

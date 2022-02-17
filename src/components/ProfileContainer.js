@@ -17,11 +17,11 @@ function ProfileContainer({ comments, handleDeleteComment }) {
         {/* User Information */}
         <div className="profile-details">
           <h2>Evan Beck</h2>
-          <p>Joined: February 2022</p>
         </div>
         <div className="profile-picture">
           <img src="./dogcritic.jpeg"></img>
         </div>
+        <p>Joined: February 2022</p>
         <div className="profile-details">
           <h3>About Me</h3>
           <p>
@@ -47,8 +47,11 @@ function ProfileContainer({ comments, handleDeleteComment }) {
             <ul>Looper</ul>
           </li>
         </div>
-   
-        <div className="comments-container">{commentList}</div>
+
+        <div className="comments-container">
+          
+          {commentList}
+          </div>
       </div>
     </div>
   );
