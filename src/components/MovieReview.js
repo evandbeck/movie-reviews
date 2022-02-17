@@ -54,7 +54,7 @@ function MovieReview({
 
   return (
     <div className="comment-container">
-      <h3 className="comment-element">Leave a comment!</h3>
+      <h3 className="comment-element">My Little Critque</h3>
       <form onSubmit={handleSubmitReview} className="comment-form">
         <lable className="comment-element">Title:</lable>
         <input
@@ -62,6 +62,7 @@ function MovieReview({
           type="text"
           value={reviewTitleInput}
           onChange={(e) => setReviewTitleInput(e.target.value)}
+          placeholder="Movie Title"
         ></input>
         <lable className="comment-element">Review:</lable>
         <textarea
@@ -71,6 +72,7 @@ function MovieReview({
           cols="50"
           value={reviewFormInput}
           onChange={(e) => setReviewFormInput(e.target.value)}
+          placeholder="Let us know what you"
         ></textarea>
         <button className="comment-btn">Submit!</button>
       </form>

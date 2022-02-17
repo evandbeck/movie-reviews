@@ -66,10 +66,7 @@ function MainContainer({ comments, setComments, handleDeleteComment }) {
         moviesArray={moviesArray}
         handleInfoDisplay={handleInfoDisplay}
         // Review Form Integration
-        comments={comments}
-        movieId={movieId}
-        handleUpdateComments={handleUpdateComments}
-        handleDeleteComment={handleDeleteComment}
+        genre={genre}
       />
       <MovieReview
           moviesArray={moviesArray}
@@ -77,6 +74,7 @@ function MainContainer({ comments, setComments, handleDeleteComment }) {
           movieId={movieId}
           handleUpdateComments={handleUpdateComments}
           handleDeleteComment={handleDeleteComment}
+       
       />
     </main>
   );

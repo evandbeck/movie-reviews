@@ -16,12 +16,14 @@ function ProfileContainer({ comments, handleDeleteComment }) {
       <div className="profile-information">
         {/* User Information */}
         <div className="profile-details">
-          <h2>Evan Beck</h2>
+          <h2>Dr. Woof</h2>
+          <p>Joined: February 2022</p>
         </div>
         <div className="profile-picture">
-          <img src="./dogcritic.jpeg"></img>
+          <img src="./dogcritic.jpeg" className="pro-pic"></img>
+       
         </div>
-        <p>Joined: February 2022</p>
+        
         <div className="profile-details">
           <h3>About Me</h3>
           <p>
@@ -35,7 +37,7 @@ function ProfileContainer({ comments, handleDeleteComment }) {
             mollis pretium. Integer tincidunt. Cras dapibus.
           </p>
           <div className="favorites-container">
-          <h4>My Top Five</h4>
+          <h4>My Top Five Movies</h4>
           <li>
             <ul>Shrek</ul>
             <ul>Inception</ul>
@@ -48,7 +50,7 @@ function ProfileContainer({ comments, handleDeleteComment }) {
       </div>
       <div className="content-container">
         <div className="comments-container">
-          <h1 className="movie-header">Your Comments</h1>
+          <h1 className="movie-header">Comment Histroy</h1>
           {commentList}
           </div>
       </div>

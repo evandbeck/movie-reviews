@@ -11,9 +11,9 @@ function MoviesContainer({
   comments,
   movieId,
   handleUpdateComments,
-  handleDeleteComment
-})
-{
+  handleDeleteComment,
+  genre,
+}) {
   // const displayMovieCards= filteredMovies.map(movie => {
   //   return (
   //     <MovieCard key={uuidv4()} {...movie} handleInfoDisplay={handleInfoDisplay} />
@@ -41,27 +41,40 @@ function MoviesContainer({
       <div className="carousel-display-container">
         <div className="carousel-details-container">
           <div className="carousel-img-container">
-          <img className="carousel-img" src={movies.posterUrl} alt="" />
+            <img className="carousel-img" src={movies.posterUrl} alt="" />
           </div>
           <div className="carousel-info">
-            <h4>{movies.title} </h4>
+            <span>
+              <b> {movies.title}</b> {movies.year}
+            </span>
+
+            <em>
+              <p>{movies.genres.join(" ")}</p>
+            </em>
+            <br></br>
             <p>{movies.plot}</p>
+
+            <br></br>
+       
+            <p> <b>Director: </b>{movies.director}</p>
+            <p> <b> Actors:</b> {movies.actors} </p>
           </div>
         </div>
-      <div className="carousel-comment">
-        {comments.filter((comment) => comment.movieId === movies.id).map((comment) => {
-            return (
-              <CommentCard
-                key={uuidv4()}
-                {...comment}
-                handleInfoDisplay={handleInfoDisplay}
-                handleDeleteComment={handleDeleteComment}
-              />
-            )
-          })
-        }
+        <div className="carousel-comment">
+          {comments
+            .filter((comment) => comment.movieId === movies.id)
+            .map((comment) => {
+              return (
+                <CommentCard
+                  key={uuidv4()}
+                  {...comment}
+                  handleInfoDisplay={handleInfoDisplay}
+                  handleDeleteComment={handleDeleteComment}
+                />
+              );
+            })}
+        </div>
       </div>
-    </div>
     );
   });
 
@@ -71,11 +84,7 @@ function MoviesContainer({
       <div className="carousel-display-container">
         <div className="carousel-details-container">
           <div className="carousel-img-container">
-          <img className="carousel-img" src={movies.posterUrl} alt="" />
-          </div>
-          <div className="carousel-info">
-            <h4>{movies.title} </h4>
-            <p>{movies.plot}</p>
+            <img className="carousel-img" src={movies.posterUrl} alt="" />
           </div>
         </div>
         {/* <div className="carousel-comment">
@@ -97,7 +106,10 @@ function MoviesContainer({
 
   return (
     <div className="movie-container">
-      <h2 className="movie-header">Movie Review Selection</h2>
+      <div className="movie-header">
+        <h2>Movie Review Selection</h2>
+        <p className="movie-genre"> {genre}</p>
+      </div>
       <div className="carousel">
         {isGenreClicked ? (
           <Carousel slides={slidesFilter} />

@@ -6,7 +6,6 @@ function GenresContainer({
   genresArray,
   onClickDisplayMovies,
   handleSearchDisplay,
-  
 }) {
   // let filteredArtistList = [];
 
@@ -16,7 +15,11 @@ function GenresContainer({
   //   return self.indexOf(value) === index;
   // });
 
-  const genreList = genresArray.map((genre) => (
+  const genresArrayAlpha = genresArray.sort();
+
+  console.log(genresArrayAlpha);
+
+  const genreList = genresArrayAlpha.map((genre) => (
     <Genres
       key={uuidv4()}
       genre={genre}
