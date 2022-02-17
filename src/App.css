@@ -177,7 +177,6 @@
 
 .movie-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -204,18 +203,22 @@
 }
 
 .carousel-img-container {
+  min-width: 200px;
   max-width: 300px;
 }
 
 .carousel-info {
   margin-top: 25px;
+  min-width: 350px;
+  max-width: 350px;
   background-color: black;
 }
 
 .carousel-display-container {
   padding: 50px;
-  background-color: black;
-  width: 100%;
+  background-color: blue;
+  min-width: 750px;
+  max-width: 850px;
   display: flex;
   justify-content: center;
   border-radius: 25px;
