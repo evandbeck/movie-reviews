@@ -171,8 +171,7 @@
 .main {
   margin: 50px;
   display: flex;
-  justify-content: space-between;
-  border: 2px solid purple;
+  border: 2px solid blue;
 }
 
 .movie-container {
@@ -180,17 +179,17 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 85%;
+  max-width: 50%;
   border: 2px solid yellow;
 }
 
 .carousel {
-  width: 500px;
-  margin-top: 50px;
+  width: 750px;
+  /* margin-top: 50px; */
 }
 
 .carousel-img {
-  width: 500px;
+  width: 100%;
 }
 
 .carousel-container {
@@ -230,6 +229,10 @@
 .search-form {
   border: 2px solid blue;
   max-height: 30px;
+}
+
+.genres-container {
+  border: 2px solid green;
 }
 
 li {

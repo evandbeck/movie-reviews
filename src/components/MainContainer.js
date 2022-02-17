@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import MoviesContainer from "./MoviesContainer.js";
 import GenresContainer from "./GenresContainer.js";
-import MovieSlider from "./MovieSlider.js";
+import MovieReview from "./MovieReview.js";
 
 function MainContainer({ comments, setComments, handleDeleteComment }) {
   const [genresArray, setGenresArray] = useState([]);
   const [genre, setGenre] = useState("");
   const [moviesArray, setMoviesArray] = useState([]);
   const [searchDisplay, setSearchDisplay] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchMovies, setSearchMovies] = useState([]);
 
   const [isGenreClicked, setIsGenreClicked] = useState(false);
+
+  const [movieReviewForm, setMovieReviewForm] = useState(false);
+  const [movieId, setMovieId] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:3000/genres")
@@ -34,14 +35,17 @@ function MainContainer({ comments, setComments, handleDeleteComment }) {
     movie.genres.includes(genre)
   );
 
-  function onChangeSearch(searchTerm) {
-    setSearchMovies(searchTerm);
-  }
-
-  // const searchMovies = filteredMovies.filter(movie => movie.title === searchTerm)
-
   function handleSearchDisplay() {
     setSearchDisplay(true);
+  }
+
+  function handleInfoDisplay(id) {
+    setMovieId(id);
+    setMovieReviewForm(true);
+  }
+
+  function handleUpdateComments(newComment) {
+    setComments((comments) => [...comments, newComment]);
   }
 
   return (
@@ -54,16 +58,22 @@ function MainContainer({ comments, setComments, handleDeleteComment }) {
       />
       <MoviesContainer
         filteredMovies={filteredMovies}
-        onChangeSearch={onChangeSearch}
         searchDisplay={searchDisplay}
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
         comments={comments}
         setComments={setComments}
+        handleUpdateComments={handleUpdateComments}
         handleDeleteComment={handleDeleteComment}
         isGenreClicked={isGenreClicked}
         moviesArray={moviesArray}
       />
+      {movieReviewForm ? (
+      <MovieReview
+        comments={comments}
+        movieId={movieId}
+        handleUpdateComments={handleUpdateComments}
+        handleDeleteComment={handleDeleteComment}
+      />
+      ) : null}
     </main>
   );
 }
