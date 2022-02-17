@@ -40,6 +40,7 @@ function MainContainer({ comments, setComments, handleDeleteComment }) {
   }
 
   function handleInfoDisplay(id) {
+    console.log("hello");
     setMovieId(id);
     setMovieReviewForm(true);
   }
@@ -65,14 +66,15 @@ function MainContainer({ comments, setComments, handleDeleteComment }) {
         handleDeleteComment={handleDeleteComment}
         isGenreClicked={isGenreClicked}
         moviesArray={moviesArray}
+        handleInfoDisplay={handleInfoDisplay}
       />
       {movieReviewForm ? (
-      <MovieReview
-        comments={comments}
-        movieId={movieId}
-        handleUpdateComments={handleUpdateComments}
-        handleDeleteComment={handleDeleteComment}
-      />
+        <MovieReview
+          comments={comments}
+          movieId={movieId}
+          handleUpdateComments={handleUpdateComments}
+          handleDeleteComment={handleDeleteComment}
+        />
       ) : null}
     </main>
   );

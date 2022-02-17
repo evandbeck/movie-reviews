@@ -172,6 +172,7 @@
   margin: 50px;
   display: flex;
   border: 2px solid blue;
+  width: 100%;
 }
 
 .movie-container {
@@ -179,17 +180,49 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 50%;
+  width: 100%;
   border: 2px solid yellow;
 }
 
 .carousel {
-  width: 750px;
+  /* width: 750px;
+  max-width: 600px; */
   /* margin-top: 50px; */
+  width: 100%;
+}
+
+.carousel-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-img {
   width: 100%;
+  border-radius: 25px;
+}
+
+.carousel-img-container {
+  max-width: 300px;
+}
+
+.carousel-info {
+  margin-top: 25px;
+  background-color: black;
+}
+
+.carousel-display-container {
+  padding: 50px;
+  background-color: black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 25px;
+}
+
+.carousel-comment {
+  margin-left: 100px;
 }
 
 .carousel-container {
@@ -331,7 +364,7 @@ li {
   background-color: #5f85db;
   border-radius: 15px;
   filter: drop-shadow(2px 2px 1px black);
-  margin: 10px;
+  margin: 15px;
   padding: 10px;
   width: 60%;
   min-width: 250px;
