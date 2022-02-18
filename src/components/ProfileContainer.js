@@ -50,7 +50,7 @@ function ProfileContainer({ comments, handleDeleteComment }) {
       </div>
       <div className="content-container">
         <div className="comments-container">
-          <h1 className="movie-header">Comment Histroy</h1>
+          <h1 className="movie-header">Comment History</h1>
           {commentList}
           </div>
       </div>
