@@ -5,7 +5,7 @@ function NavBar() {
   return (
     <div className="navbar-container">
       <div className="app-name">
-        <li className="name-element">My Little Cinemas</li>
+        <li className="name-element">Movie Reviews</li>
       </div>
       <div className="navBar">
         <Link to="/" style={{ textDecoration: "none" }}>

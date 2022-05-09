@@ -55,7 +55,7 @@ function MovieReview({
 
   return (
     <div className="comment-container">
-      <h3 className="comment-element">My Little Critique</h3>
+      <h3 className="comment-element">Leave a Review</h3>
       <form onSubmit={handleSubmitReview} className="comment-form">
         <lable className="comment-element">Title:</lable>
         <input
