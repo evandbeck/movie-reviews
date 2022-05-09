@@ -11,6 +11,48 @@
       "movieTitle": "Planet 51",
       "movieId": 14,
       "id": 3
+    },
+    {
+      "comment": "Wow! So much action!",
+      "movieTitle": "Apocalypto",
+      "movieId": 11,
+      "id": 4
+    },
+    {
+      "comment": "I thought this movie was about a beach?",
+      "movieTitle": "The Beach",
+      "movieId": 18,
+      "id": 6
+    },
+    {
+      "comment": "Thrilling!",
+      "movieTitle": "Valkyrie",
+      "movieId": 5,
+      "id": 7
+    },
+    {
+      "comment": "Bleh! I hate rats!",
+      "movieTitle": "Ratatouille",
+      "movieId": 6,
+      "id": 8
+    },
+    {
+      "comment": "Very touching!",
+      "movieTitle": "The Intouchables",
+      "movieId": 9,
+      "id": 9
+    },
+    {
+      "comment": "So much music! Yay!",
+      "movieTitle": "The Cotton Club",
+      "movieId": 2,
+      "id": 10
+    },
+    {
+      "comment": "Crocodiles! Wowie!",
+      "movieTitle": "Crocodile Dundee",
+      "movieId": 4,
+      "id": 11
     }
   ],
   "genres": [

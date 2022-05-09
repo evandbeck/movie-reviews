@@ -17,7 +17,6 @@ function MovieReview({
     const filteredMovieObj = moviesArray.filter(
       (movie) => movie.title.toLowerCase() === reviewTitleInput.toLowerCase()
     );
-
     // Update State
     const newComment = {
       comment: reviewFormInput,
@@ -33,6 +32,8 @@ function MovieReview({
       },
       body: JSON.stringify(newComment),
     });
+    setReviewTitleInput("")
+    setReviewFormInput("")
   }
 
   const filteredComments = comments.filter(
@@ -54,7 +55,7 @@ function MovieReview({
 
   return (
     <div className="comment-container">
-      <h3 className="comment-element">My Little Critque</h3>
+      <h3 className="comment-element">My Little Critique</h3>
       <form onSubmit={handleSubmitReview} className="comment-form">
         <lable className="comment-element">Title:</lable>
         <input
@@ -72,7 +73,7 @@ function MovieReview({
           cols="50"
           value={reviewFormInput}
           onChange={(e) => setReviewFormInput(e.target.value)}
-          placeholder="Let us know what you"
+          placeholder="Let us know what you think..."
         ></textarea>
         <button className="comment-btn">Submit!</button>
       </form>
